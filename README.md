@@ -91,12 +91,12 @@ The application follows a modern Server Component-driven architecture.
 
 ## 📜 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Will be Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
 ## 📬 Contact
 
-Your Name - Niranjan Kulkarni
+Made in India with ♥️ by Niranjan Kulkarni and Shivam Patil. 
 
 Project Link: https://resume-x-orcin.vercel.app/
