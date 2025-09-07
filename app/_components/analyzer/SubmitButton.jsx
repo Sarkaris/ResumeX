@@ -30,7 +30,7 @@ export function SubmitButton() {
       } else {
         clearInterval(interval); // stop at last step
       }
-    }, 500); // 1.5s per step
+    }, 1500); // 1.5s per step
 
     return () => clearInterval(interval);
   }, [pending]);

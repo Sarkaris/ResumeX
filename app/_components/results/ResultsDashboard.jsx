@@ -65,7 +65,7 @@ const KeywordList = ({ title, keywords, variant }) => (
 
 const SectionScoreChart = ({ title, score, feedback }) => {
   const data = [{ name: title, score: score }];
-  const scoreColor = score > 8 ? '#22c55e' : score > 5 ? '#f59e0b' : '#ef4444';
+  const scoreColor = score >= 8 ? '#22c55e' : score >= 5 ? '#f59e0b' : '#ef4444';
 
   return (
     <div className="py-4 border-b border-gray-200 dark:border-gray-800 last:border-b-0">
@@ -86,7 +86,7 @@ const SectionScoreChart = ({ title, score, feedback }) => {
               </BarChart>
             </ResponsiveContainer>
           </div>
-          <span className={`font-bold text-lg w-12 text-right ${score > 8 ? 'text-green-500' : score > 5 ? 'text-yellow-500' : 'text-red-500'}`}>
+          <span className={`font-bold text-lg w-12 text-right ${score >= 8 ? 'text-green-500' : score >= 5 ? 'text-yellow-500' : 'text-red-500'}`}>
             {score}/10
           </span>
         </div>
@@ -264,13 +264,22 @@ export function ResultsDashboard({ reportData, resultId }) {
                     {/* ----------  Overall Match Score  ---------- */}
                     <Card className="relative overflow-hidden border border-white/10 bg-white/30 dark:bg-gray-900/30 backdrop-blur-xl">
                       {/* glowing ring */}
-                      <span
+                      {/* <span
   className="absolute inset-0 rounded-2xl border border-transparent
-             bg-gradient-to-tr from-violet-500 via-purple-500 to-blue-500
-             opacity-25 animate-[pulse_6s_ease-in-out_infinite]
-             blur-sm"
+             bg-gradient-to-tr from-gray-200 via-gray-300 to-gray-400
+             opacity-20 animate-[pulse_6s_ease-in-out_infinite]
+             blur-[1px]"
+  aria-hidden="true"
+/> */}
+<span
+  className="absolute inset-0 rounded-2xl border border-transparent
+             bg-gradient-to-tr from-indigo-400 via-sky-400 to-blue-500
+             opacity-15 animate-[pulse_5s_ease-in-out_infinite]
+             blur-[2px]"
   aria-hidden="true"
 />
+
+
 
 
                       <CardHeader>
