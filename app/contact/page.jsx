@@ -8,16 +8,16 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 
-const SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbwsnysKYE6MzqMFLuDPhRHTINqmCkRJmQmae0X330t8uTnQh_6aknFDyAYwFQQecNEIKw/exec';
+const SCRIPT_URL =  process.env.GOOGLE_FORM_URL;
 
 const info = [
-  { icon: <Mail className="h-5 w-5" />, label: 'Email', value: 'support@jobmatchai.com' },
-  { icon: <Phone className="h-5 w-5" />, label: 'Phone', value: '+1 (555) 123-4567' },
-  { icon: <MapPin className="h-5 w-5" />, label: 'Address', value: 'San Francisco, CA 94105' },
+  { icon: <Mail className="h-5 w-5" />, label: 'Email', value: 'support@ResumeX.com' },
+  { icon: <Phone className="h-5 w-5" />, label: 'Phone', value: '+91 9322946229' },
+  { icon: <MapPin className="h-5 w-5" />, label: 'Address', value: 'Budhgaon, Sangli - 416304 ' },
 ];
 
 export default function Contact() {
+  console.log( process.env.GOOGLE_FORM_URL)
   const formRef = useRef(null);
   const [status, setStatus] = useState('');   // "" | "sending" | "sent" | "error"
 
@@ -82,7 +82,7 @@ export default function Contact() {
                 className="space-y-4"
               >
                 {/* hidden helper for Google */}
-                <input type="hidden" name="form-source" value="jobmatch-contact" />
+                <input type="hidden" name="form-source" value="ResumeX" />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>

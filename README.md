@@ -1,4 +1,4 @@
-#  JobMatch AI - AI-Powered Resume Analyzer 🚀
+#  ResumeX AI - AI-Powered Resume Analyzer 🚀
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E77D8?style=for-the-badge&logo=google-gemini&logoColor=white) ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
@@ -10,7 +10,7 @@ Analyze your resume against any job description with the power of AI to get a de
 
 ## ✨ About The Project
 
-JobMatch AI is a full-stack web application built to give job seekers a critical advantage in today's competitive market. Instead of blindly submitting applications, users can get instant, data-driven feedback on their resume's compatibility with a specific role.
+ResumeX AI is a full-stack web application built to give job seekers a critical advantage in today's competitive market. Instead of blindly submitting applications, users can get instant, data-driven feedback on their resume's compatibility with a specific role.
 
 The application leverages the Google Gemini API to perform a deep, section-by-section analysis, providing a comprehensive report that includes an overall match score, keyword optimization, actionable suggestions, and even an AI-generated cover letter.
 

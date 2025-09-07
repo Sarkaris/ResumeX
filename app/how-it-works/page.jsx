@@ -50,7 +50,7 @@ export default function HowItWorks() {
       {/*  HERO  */}
       <section className="container mx-auto px-4 pt-16 pb-10 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-          How <span className="text-blue-600">JobMatch&nbsp;AI</span> works
+          How <span className="text-blue-600">ResumeX</span> works
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
           Four simple steps stand between you and a resume that lands interviews.
