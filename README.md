@@ -52,11 +52,11 @@ Make sure you have Node.js (version 18.x or higher) and npm installed on your ma
 
 1.  **Clone the repo**
     ```sh
-    git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
+    git clone https://github.com/Sarkaris/ResumeX
     ```
 2.  **Navigate to the project directory**
     ```sh
-    cd your-repository-name
+    cd ResumeX
     ```
 3.  **Install NPM packages**
     ```sh
@@ -97,6 +97,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📬 Contact
 
-Your Name - [@your\_twitter\_handle](https://twitter.com/your_twitter_handle) - your.email@example.com
+Your Name - Niranjan Kulkarni
 
-Project Link: [https://github.com/your-username/your-repository-name](https://github.com/your-username/your-repository-name)
+Project Link: https://resume-x-orcin.vercel.app/
