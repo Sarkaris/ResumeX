@@ -1,103 +1,147 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { ArrowRight, BrainCircuit, ScanLine, Sparkles, UploadCloud, Zap, FileText } from 'lucide-react';
+
+export default function LandingPage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-background">
+      {/* Aurora bg */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(0,0,0,0))]" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* HERO */}
+      <section className="container relative z-10 mx-auto flex flex-col items-center px-4 pt-32 pb-24 text-center sm:pt-40 sm:pb-32">
+        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-4 py-2 text-sm">
+          <Sparkles className="h-4 w-4 text-blue-500" />
+          <span>Upload, Optimize, Get Hired!</span>
+          {/* <span>Join 10 000+ users who landed interviews last month</span> */}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <h1 className="text-4xl font-extrabold tracking-tighter text-foreground md:text-6xl lg:text-7xl">
+          Land Your Dream Job, <br />
+          <span className="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">Powered by AI.</span>
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
+          Stop guessing. Our AI analyses your resume against any job description, giving instant, actionable feedback to beat the bots and impress recruiters.
+        </p>
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <Button size="lg" asChild className="h-14 px-10 text-lg shadow-lg shadow-blue-500/20 hover:shadow-xl">
+            <Link href="/analyze">
+              Analyse My Resume <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+          <Button size="lg" variant="outline" className="h-14 px-10 text-lg">
+            <Link href="#features">Learn More</Link>
+          </Button>
+        </div>
+        <p className="mt-4 text-xs text-muted-foreground">✓ Free analysis &nbsp; ✓ No sign-up required</p>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section id="how" className="container mx-auto px-4 py-20 sm:py-28">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">Incredibly Simple. Incredibly Powerful.</h2>
+          <p className="mt-4 text-muted-foreground">Get from resume to interview-ready in three simple steps.</p>
+        </div>
+
+        <div className="relative mt-16 grid grid-cols-1 gap-12 md:grid-cols-3">
+          {/* connector line */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 hidden h-px w-full -translate-y-1/2 md:block md:w-[calc(100%-4rem)] md:-translate-x-1/2">
+            <svg width="100%" height="2"><line x1="0" y1="1" x2="100%" y2="1" strokeDasharray="8" className="stroke-border" /></svg>
+          </div>
+
+          {[
+            { icon: UploadCloud, title: '1. Upload', desc: 'Securely upload your resume and the job description.' },
+            { icon: Zap, title: '2. Analyse', desc: 'Our AI performs a deep scan in seconds.' },
+            { icon: FileText, title: '3. Optimise', desc: 'Receive your report with actionable suggestions.' },
+          ].map((s, i) => (
+            <div key={i} className="relative flex flex-col items-center text-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full border-4 border-background bg-blue-100 dark:bg-blue-900/50">
+                <s.icon className="h-7 w-7 text-blue-600 dark:text-blue-300" />
+              </div>
+              <h3 className="mt-6 text-xl font-semibold">{s.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section id="features" className="container mx-auto bg-secondary/30 px-4 py-20 sm:py-28">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">Your Unfair Advantage</h2>
+          <p className="mt-4 text-muted-foreground">We analyse resumes like a top-tier recruiter.</p>
+        </div>
+
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {[
+            { icon: BrainCircuit, title: 'Write Like a Pro', desc: 'AI crafts compelling, recruiter-magnet bullet points.' },
+            { icon: ScanLine, title: 'Beat the Bots', desc: 'Keyword analysis ensures you sail through any ATS.' },
+            { icon: Sparkles, title: 'Uncover Hidden Gaps', desc: 'Smart suggestions to highlight strengths & fix misses.' },
+          ].map((f, i) => (
+            
+
+            
+
+            <Card key={i} className="text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1"> <CardHeader><div className="mx-auto bg-blue-100 dark:bg-blue-900/50 p-4 rounded-full w-fit"><BrainCircuit className="h-8 w-8 text-blue-600 dark:text-blue-300" /></div><CardTitle className="mt-4">{f.title}</CardTitle></CardHeader> <CardContent><p className="text-gray-500 dark:text-gray-400">{f.desc}</p></CardContent> </Card>
+          
+          ))}
+        </div>
+      </section>
+      {/* <Card key={i} className="group hover:-translate-y-1 hover:shadow-xl transition">
+              <CardHeader className="items-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/50">
+                  <f.icon className="h-8 w-8 text-blue-600 dark:text-blue-300" />
+                </div>
+                <CardTitle className="mt-4 text-center">{f.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-center text-sm text-muted-foreground">{f.desc}</p>
+              </CardContent>
+            </Card> */}
+
+      {/* TESTIMONIALS  – – –  C O M M E N T E D  O U T */}
+      {/*
+      <section className="container mx-auto px-4 py-20 sm:py-28">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">Loved by Job Seekers Worldwide</h2>
+          <p className="mt-4 text-muted-foreground">What our users are saying.</p>
+        </div>
+        ...cards here...
+      </section>
+      */}
+
+      {/* FAQ – CENTRED */}
+      <section className="container mx-auto bg-secondary/30 px-4 py-20 sm:py-28">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-bold md:text-4xl">Frequently Asked Questions</h2>
+        </div>
+
+        <Accordion type="single" collapsible className="mx-auto mt-10 max-w-3xl">
+          {[
+            { q: 'Is my data secure?', a: 'Yes. We use end-to-end encryption and never store your resume after the session.' },
+            { q: 'Is this service really free?', a: 'The core analysis is 100 % free. Premium extras may come later.' },
+            { q: 'What file types do you support?', a: 'PDF and Microsoft Word (.docx).' },
+            { q: 'How does the AI work?', a: 'We use a large-language-model API trained on thousands of job descriptions and recruiter playbooks.' },
+          ].map((faq, i) => (
+            <AccordionItem key={i} value={`item-${i}`}>
+              <AccordionTrigger className="text-left">{faq.q}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="container mx-auto flex flex-col items-center px-4 py-20 text-center sm:py-28">
+        <h2 className="text-3xl font-bold md:text-5xl">Ready to Land Your Next Interview?</h2>
+        <p className="mt-4 max-w-xl text-muted-foreground">Stop wondering if your resume is good enough—find out for sure.</p>
+        <Button asChild size="lg" className="mt-8 h-16 px-12 text-xl shadow-lg shadow-blue-500/20 hover:shadow-xl">
+          <Link href="/analyze">Get Your Free Analysis</Link>
+        </Button>
+      </section>
     </div>
   );
 }
